@@ -16,7 +16,6 @@ import BigCrousel from "./BigCrousel";
 import AchiveMentSection from "./AchiveMentSection";
 
 export default function HomePage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [activeProduct, setActiveProduct] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [startIndex, setStartIndex] = useState(0);
@@ -189,13 +188,6 @@ export default function HomePage() {
     },
   ];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % products.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -215,9 +207,9 @@ export default function HomePage() {
                 </div>
               </h1>
               <p className="sm:text-xl text-base   max-w-4xl m-auto mb-8">
-                Raising healthy animals limits the potential for disease spread,
-                supports farmers' livelihoods, and provides nutrient-rich meat,
-                milk, fish and eggs to nourish and support human health
+                Raising healthy animals limits the potential for disease spread
+                supports farmers livelihoods, and provides nutrient-rich meat
+                milk fish and eggs to nourish and support human health
               </p>
               <Button
                 className="sm:px-10  sm:text-xl sm:py-6"
@@ -278,10 +270,10 @@ export default function HomePage() {
                   Best Quality Poultry Feed Supplements
                 </h1>
                 <p className=" mb-4">
-                  NOVARK Group, is a large manufacturer of Amino acids for
-                  livestock and pets production and sales together. Besides, it
+                  NOVARK Group is a large manufacturer of Amino acids for
+                  livestock and pets production and sales together. Besides it
                   is also one of the Top 50 Enterprises in Europe. The Company
-                  was established in 2008, and restructured into INC.
+                  was established in 2008 and restructured into INC.
                 </p>
                 <ul>
                   <li className="flex items-center gap-x-1">
@@ -369,9 +361,8 @@ export default function HomePage() {
                         NOVARK VET HEALTH INC. is a global leader in animal
                         health dedicated to innovating and delivering products
                         and services to prevent and treat disease in farm
-                        animals and pets, creating value for farmers, pet
-                        owners, veterinarians, stakeholders, and society as a
-                        whole.
+                        animals and pets creating value for farmers pet owners
+                        veterinarians stakeholders and society as a whole.
                       </p>
 
                       <Button className="mt-4 bg-primary-color-light hover:bg-secondry-color ">

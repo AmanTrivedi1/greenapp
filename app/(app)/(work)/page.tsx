@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -8,7 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// Sample data
+
 const data = [
   {
     image: "/08.png",

@@ -59,7 +59,7 @@ const AccordianSection = () => {
               WHY TO CHOOSE NOVARK?
             </h1>
             <p className="text-xl md:text-3xl font-semibold mt-4">
-              "People don't buy what you do; they buy why you do it" - Simon
+             People don't buy what you do; they buy why you do it - Simon
               Sinek
             </p>
           </div>

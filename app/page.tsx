@@ -1,7 +1,5 @@
 import Navbar from "@/components/navbar";
 
-
-import { WorkPage } from "./(app)/(work)/page";
 import HomePage from "./(app)/(home)/page";
 import Footer from "@/components/footer";
 
