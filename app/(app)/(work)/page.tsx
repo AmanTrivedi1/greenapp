@@ -1,3 +1,4 @@
+"use clinent";
 import * as React from "react";
 import {
   Carousel,

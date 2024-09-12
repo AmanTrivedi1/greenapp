@@ -1,3 +1,4 @@
+"use clinent";
 import { Facebook, Instagram, PhoneCall, Youtube } from "lucide-react";
 
 import Link from "next/link";

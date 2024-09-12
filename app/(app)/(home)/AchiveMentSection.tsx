@@ -1,3 +1,4 @@
+"use clinent";
 import React from "react";
 
 const AchiveMentSection = () => {

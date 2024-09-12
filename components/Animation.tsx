@@ -1,3 +1,4 @@
+"use clinent";
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 
