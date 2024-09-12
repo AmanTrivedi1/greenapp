@@ -47,7 +47,7 @@ const AccordianSection = () => {
               </div>
               <div>
                 <h1 className="sm:text-2xl text-base font-semibold">1050MT</h1>
-                <p className="sm:text-base text-sm ">Growth Capacity Per Day</p>
+                <p className="sm:text-base text-sm">Growth Capacity Per Day</p>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ const AccordianSection = () => {
               WHY TO CHOOSE NOVARK?
             </h1>
             <p className="text-xl md:text-3xl font-semibold mt-4">
-             People don't buy what you do; they buy why you do it - Simon
+              People don&apos;t buy what you do; they buy why you do it - Simon
               Sinek
             </p>
           </div>
@@ -87,9 +87,9 @@ const AccordianSection = () => {
                 </div>
               </AccordionTrigger>
               <AccordionContent className="ml-2 text-sm md:text-base">
-                Who doesn't want an experience that's simple and without
-                friction? And, if the service is good people are also willing to
-                pay a higher price.
+                Who doesn&apos;t want an experience that&apos;s simple and
+                without friction? And, if the service is good people are also
+                willing to pay a higher price.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
@@ -102,9 +102,9 @@ const AccordianSection = () => {
               </AccordionTrigger>
               <AccordionContent className="ml-2 text-sm md:text-base">
                 You trust what they believe in. At some level this links with
-                culture and values, but it's all about giving back and engaging
-                the community. It can be a charity or some other cause that
-                matters to you; everything from saving elephants to curing
+                culture and values, but it&apos;s all about giving back and
+                engaging the community. It can be a charity or some other cause
+                that matters to you; everything from saving elephants to curing
                 poverty in the world.
               </AccordionContent>
             </AccordionItem>
