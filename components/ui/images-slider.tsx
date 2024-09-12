@@ -40,17 +40,17 @@ export const ImagesSlider = ({
 
   const loadImages = () => {
     const loadPromises = images.map((image) => {
-      return new Promise((resolve, reject) => {
+      return new Promise<string>((resolve, reject) => {
         const img = new Image();
         img.src = image;
         img.onload = () => resolve(image);
-        img.onerror = reject;
+        img.onerror = () => reject(new Error(`Failed to load image: ${image}`));
       });
     });
 
     Promise.all(loadPromises)
       .then((loadedImages) => {
-        setLoadedImages(loadedImages as string[]);
+        setLoadedImages(loadedImages);
       })
       .catch((error) => console.error("Failed to load images", error));
   };
@@ -67,7 +67,7 @@ export const ImagesSlider = ({
     window.addEventListener("keydown", handleKeyDown);
 
     // autoplay
-    let interval: any;
+    let interval: NodeJS.Timeout;
     if (autoplay) {
       interval = setInterval(() => {
         handleNext();
@@ -76,7 +76,9 @@ export const ImagesSlider = ({
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      clearInterval(interval);
+      if (autoplay) {
+        clearInterval(interval);
+      }
     };
   }, [autoplay]);
 
