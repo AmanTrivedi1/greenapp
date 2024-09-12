@@ -1,7 +1,7 @@
 import Navbar from "@/components/navbar";
 
-import HomePage from "./(app)/(home)/page";
 import Footer from "@/components/footer";
+import HomePage from "./webapp/home/page";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <div className="max-w-[1300px] m-auto">
         <Navbar />
         <HomePage />
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
