@@ -11,9 +11,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { FaFlask, FaPhone, FaTruck } from "react-icons/fa";
 import { AnimatedSection } from "@/components/Animation";
-import AccordianSection from "./AccordianSection";
-import BigCrousel from "./BigCrousel";
-import AchiveMentSection from "./AchiveMentSection";
+import AccordianSection from "../../components/AccordianSection";
+import BigCrousel from "../../components/BigCrousel";
+import AchiveMentSection from "../../components/AchiveMentSection";
 
 export default function HomePage() {
   const [activeProduct, setActiveProduct] = useState(0);
