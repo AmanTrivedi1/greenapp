@@ -1,7 +1,7 @@
 import Navbar from "@/components/navbar";
 
 import Footer from "@/components/footer";
-import HomePage from "./webapp/(home)/page";
+import HomePage from "./(home)/page";
 
 
 export default function Home() {
