@@ -14,8 +14,8 @@ import { AnimatedSection } from "@/components/Animation";
 import BigCrousel from "@/components/BigCrousel";
 import AccordianSection from "@/components/AccordianSection";
 import AchiveMentSection from "@/components/AchiveMentSection";
-// import Navbar from "@/components/navbar";
-// import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export default function HomePage() {
   const [activeProduct, setActiveProduct] = useState(0);
@@ -504,7 +504,7 @@ export default function HomePage() {
             </div>
           </AnimatedSection>
           <AnimatedSection>
-            <section className="bg-primary-color-light py-16">
+            <section className="bg-primary-color-light rounded-lg py-16">
               <div className="container mx-auto px-4 text-center">
                 <h2 className="text-3xl font-bold text-white mb-8">
                   Ready to Start Your Wellness Journey?

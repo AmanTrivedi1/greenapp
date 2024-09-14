@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="flex  sm:flex-row flex-col gap-y-4 justify-between">
             <div className="sm:w-64 ">
-              <h3 className="text-xl font-semibold mb-4">About NutriLife</h3>
+              <h3 className="text-xl font-semibold mb-4">About Novark</h3>
               <p className="text-gray-400">
                 Empowering healthier lives through premium nutrition and
                 wellness solutions.
@@ -61,8 +61,8 @@ const Footer = () => {
             </div>
           </div>
           <div className="border-t  mt-8 pt-8 text-center">
-            <p className="text-gray-400">
-              &copy; 2023 NutriLife. All rights reserved.
+            <p className="">
+              Copyright 2023. All Rights Reserved by NOVARK VET HEALTH INC.
             </p>
           </div>
         </div>

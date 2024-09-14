@@ -18,11 +18,13 @@ const Navbar = () => {
               className="flex items-center space-x-2"
             >
               <span className="text-2xl font-bold text-primary-color-light">
-                <img className="max-w-[100px]" src="/logo.png" alt="logo" />
+                <Link href="/">
+                  <img className="max-w-[100px]" src="/logo.png" alt="logo" />
+                </Link>
               </span>
             </motion.div>
             <nav className="hidden md:flex space-x-6">
-              {["Products", "About", "Blog", "Contact"].map((item, index) => (
+              {["Products", "About", "Contact"].map((item, index) => (
                 <motion.div
                   key={item}
                   whileHover={{ scale: 1.1 }}
@@ -31,7 +33,7 @@ const Navbar = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <Link
-                    href={`/${item.toLowerCase()}`} 
+                    href={`/${item.toLowerCase()}`}
                     className="hover:text-primary-color-light transition-colors"
                   >
                     {item}
@@ -77,7 +79,7 @@ const Navbar = () => {
                 {["Products", "About", "Contact"].map((item) => (
                   <Link
                     key={item}
-                    href={`/${item.toLowerCase()}`} // Dynamically generate the route in lowercase
+                    href={`/${item.toLowerCase()}`} 
                     className="hover:text-primary-color-light transition-colors"
                   >
                     {item}
