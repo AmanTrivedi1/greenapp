@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Leaf} from "lucide-react";
 import { MdOutlineHighQuality } from "react-icons/md";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -14,8 +14,8 @@ import { AnimatedSection } from "@/components/Animation";
 import BigCrousel from "@/components/BigCrousel";
 import AccordianSection from "@/components/AccordianSection";
 import AchiveMentSection from "@/components/AchiveMentSection";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+// import Navbar from "@/components/navbar";
+// import Footer from "@/components/footer";
 
 export default function HomePage() {
   const [activeProduct, setActiveProduct] = useState(0);
@@ -92,20 +92,20 @@ export default function HomePage() {
     },
   ];
 
-  const nextSlidee = () => {
-    setStartIndex((prevIndex) => (prevIndex + visibleCards) % items.length);
-  };
+  // const nextSlidee = () => {
+  //   setStartIndex((prevIndex) => (prevIndex + visibleCards) % items.length);
+  // };
 
-  const prevSlidee = () => {
-    setStartIndex(
-      (prevIndex) => (prevIndex - visibleCards + items.length) % items.length
-    );
-  };
+  // const prevSlidee = () => {
+  //   setStartIndex(
+  //     (prevIndex) => (prevIndex - visibleCards + items.length) % items.length
+  //   );
+  // };
 
-  const visibleItems = [
-    ...items.slice(startIndex),
-    ...items.slice(0, startIndex),
-  ].slice(0, visibleCards);
+  // const visibleItems = [
+  //   ...items.slice(startIndex),
+  //   ...items.slice(0, startIndex),
+  // ].slice(0, visibleCards);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % bestQuality.length);
