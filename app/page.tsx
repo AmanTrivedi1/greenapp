@@ -20,77 +20,77 @@ import AchiveMentSection from "@/components/AchiveMentSection";
 export default function HomePage() {
   const [activeProduct, setActiveProduct] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [startIndex, setStartIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(4);
+  // const [startIndex, setStartIndex] = useState(0);
+  // const [visibleCards, setVisibleCards] = useState(4);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setVisibleCards(1);
-      } else if (window.innerWidth < 1024) {
-        setVisibleCards(2);
-      } else {
-        setVisibleCards(4);
-      }
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth < 640) {
+  //       setVisibleCards(1);
+  //     } else if (window.innerWidth < 1024) {
+  //       setVisibleCards(2);
+  //     } else {
+  //       setVisibleCards(4);
+  //     }
+  //   };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
-  const items = [
-    {
-      title: "Toxin Binder",
-      content: "TOXIN BINDER NOVATOXIN (FEED GRADE)",
-      image: "/toxinbinder.png",
-    },
-    {
-      title: "Chlortetracycline",
-      content: "Chlortetracycline- 15% NOVACTC (FEED GRADE)",
-      image: "/chlor.png",
-    },
-    {
-      title: "DLMENHIONINE 99%",
-      content: "DLMENTHIONINE 99% NOVAMET (FEED GRADE)",
-      image: "/Dlmet.png",
-    },
-    {
-      title: "LYSINE HCL-98.5%",
-      content: "LYSINE HCL-98.5% (FEED GRADE), Only for animal feed.",
-      image: "/Lysin.png",
-    },
-    {
-      title: "VITAMIN-E 50%",
-      content: "[FEED GRADE] NOVAVIT-E [FEED GRADE), Only for animal feed.",
-      image: "/vitamin.png",
-    },
-    {
-      title: "TYLOSIN PHOSPHATE 10%",
-      content: "NOVATYL-TYLOSIN PHOSPHATE 10%.",
-      image: "/tylosin.png",
-    },
-    {
-      title: "TIAMULIN HYDROGEN FUMARATE 10%",
-      content: "TIAMULIN HYDROGEN FUMARATE 10%. (FEED GRADE) NOVATIAM.",
-      image: "/tiamulin.png",
-    },
-    {
-      title: "CHOLINE CHLORIDE-60%",
-      content: "CHOLINE CHLORIDE-60% (FEED GRADE) - NOVACHC",
-      image: "/choline.png",
-    },
-    {
-      title: "L-TRYPTOPHAN 98.5%",
-      content: "L-TRYPTOPHAN 98.5% NOVATRYP - (FEED GRADE).",
-      image: "/ltryp.png",
-    },
-    {
-      title: "LLTHREONINE 58.5%",
-      content: "L LTHREONINE 58.5% NOVATHR (FEED GRADE.)",
-      image: "/llthr.png",
-    },
-  ];
+  // const items = [
+  //   {
+  //     title: "Toxin Binder",
+  //     content: "TOXIN BINDER NOVATOXIN (FEED GRADE)",
+  //     image: "/toxinbinder.png",
+  //   },
+  //   {
+  //     title: "Chlortetracycline",
+  //     content: "Chlortetracycline- 15% NOVACTC (FEED GRADE)",
+  //     image: "/chlor.png",
+  //   },
+  //   {
+  //     title: "DLMENHIONINE 99%",
+  //     content: "DLMENTHIONINE 99% NOVAMET (FEED GRADE)",
+  //     image: "/Dlmet.png",
+  //   },
+  //   {
+  //     title: "LYSINE HCL-98.5%",
+  //     content: "LYSINE HCL-98.5% (FEED GRADE), Only for animal feed.",
+  //     image: "/Lysin.png",
+  //   },
+  //   {
+  //     title: "VITAMIN-E 50%",
+  //     content: "[FEED GRADE] NOVAVIT-E [FEED GRADE), Only for animal feed.",
+  //     image: "/vitamin.png",
+  //   },
+  //   {
+  //     title: "TYLOSIN PHOSPHATE 10%",
+  //     content: "NOVATYL-TYLOSIN PHOSPHATE 10%.",
+  //     image: "/tylosin.png",
+  //   },
+  //   {
+  //     title: "TIAMULIN HYDROGEN FUMARATE 10%",
+  //     content: "TIAMULIN HYDROGEN FUMARATE 10%. (FEED GRADE) NOVATIAM.",
+  //     image: "/tiamulin.png",
+  //   },
+  //   {
+  //     title: "CHOLINE CHLORIDE-60%",
+  //     content: "CHOLINE CHLORIDE-60% (FEED GRADE) - NOVACHC",
+  //     image: "/choline.png",
+  //   },
+  //   {
+  //     title: "L-TRYPTOPHAN 98.5%",
+  //     content: "L-TRYPTOPHAN 98.5% NOVATRYP - (FEED GRADE).",
+  //     image: "/ltryp.png",
+  //   },
+  //   {
+  //     title: "LLTHREONINE 58.5%",
+  //     content: "L LTHREONINE 58.5% NOVATHR (FEED GRADE.)",
+  //     image: "/llthr.png",
+  //   },
+  // ];
 
   // const nextSlidee = () => {
   //   setStartIndex((prevIndex) => (prevIndex + visibleCards) % items.length);
