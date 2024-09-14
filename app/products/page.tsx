@@ -6,7 +6,7 @@ const products = [
   {
     id: 1,
     title: "Product 1",
-    imageUrl: "/sonam.jpg",
+    imageUrl: "/dummy.png",
     details: [
       {
         heading: "High-Resolution Display",
@@ -23,7 +23,7 @@ const products = [
   {
     id: 2,
     title: "Product 2",
-    imageUrl: "/sonam.jpg",
+    imageUrl: "/dummy.png",
     details: [
       {
         heading: "Ultra-Thin Design",
@@ -40,7 +40,7 @@ const products = [
   {
     id: 3,
     title: "Product 3",
-    imageUrl: "/sonam.jpg",
+    imageUrl: "/dummy.png",
     details: [
       {
         heading: "Industry-Leading Noise Cancellation",
@@ -57,7 +57,7 @@ const products = [
   {
     id: 4,
     title: "Product 4",
-    imageUrl: "/sonam.jpg",
+    imageUrl: "/dummy.png",
     details: [
       {
         heading: "Fitness Tracking",
@@ -74,7 +74,7 @@ const products = [
   {
     id: 5,
     title: "Product 5",
-    imageUrl: "/sonam.jpg",
+    imageUrl: "/dummy.png",
     details: [
       {
         heading: "4K Resolution",
@@ -91,7 +91,7 @@ const products = [
   {
     id: 6,
     title: "Product 6",
-    imageUrl: "/sonam.jpg",
+    imageUrl: "/dummy.png",
     details: [
       {
         heading: "Next-Gen Graphics",
@@ -108,7 +108,7 @@ const products = [
   {
     id: 7,
     title: "Product 7",
-    imageUrl: "/sonam.jpg",
+    imageUrl: "/dummy.png",
     details: [
       {
         heading: "Active Noise Cancellation",
@@ -125,7 +125,7 @@ const products = [
   {
     id: 8,
     title: "Product 8",
-    imageUrl: "/sonam.jpg",
+    imageUrl: "/dummy.png",
     details: [
       {
         heading: "Voice Assistant Integration",
@@ -142,7 +142,7 @@ const products = [
   {
     id: 9,
     title: "Product 9",
-    imageUrl: "/sonam.jpg",
+    imageUrl: "/dummy.png",
     details: [
       {
         heading: "Eco-Friendly Commute",

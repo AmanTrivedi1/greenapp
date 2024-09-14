@@ -64,11 +64,11 @@ export default function AboutPage() {
             </p>
 
             <p className="text-sm text-start dark:text-white/70">
-              Guided by the vision of "Food and Companionship Enriching Life,"
-              NOVARK ensures integrity, affordability, and availability in the
-              feed supply. Its factory, built according to WHO standards (GMP,
-              GLP, GSP), upholds sustainable and eco-friendly practices to
-              produce high-quality products.
+              Guided by the vision of &quot;Food and Companionship Enriching
+              Life,&quot; NOVARK ensures integrity, affordability, and
+              availability in the feed supply. Its factory, built according to
+              WHO standards (GMP, GLP, GSP), upholds sustainable and
+              eco-friendly practices to produce high-quality products.
             </p>
           </section>
 
