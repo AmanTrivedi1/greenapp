@@ -6,7 +6,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="max-w-[1300px] m-auto">
       <footer className="  py-12">
         <div className="container mx-auto px-4">
           <div className="flex  sm:flex-row flex-col gap-y-4 justify-between">
@@ -55,7 +55,7 @@ const Footer = () => {
                   <Youtube />
                 </Link>
                 <Link href="https://www.google.com/">
-                  <PhoneCall/>
+                  <PhoneCall />
                 </Link>
               </div>
             </div>

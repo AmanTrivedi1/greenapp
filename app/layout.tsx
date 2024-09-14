@@ -3,6 +3,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Poppins } from "next/font/google";
 
 import "./globals.css";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,7 +31,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="bg-gradient-to-br from-green-50 to-blue-50 dark:bg-gradient-to-br dark:from-[#0C0A09] dark:to-[#0C0A09]/80">
-            {children}
+            <div>
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
           </div>
         </ThemeProvider>
       </body>

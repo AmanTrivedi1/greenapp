@@ -3,21 +3,21 @@ import React from "react";
 
 const AchiveMentSection = () => {
   return (
-    <div className="grid grid-cols-1 p-4 gap-y-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      <div className="fleex flex-col sm:w-64 w-full">
+    <div className="flex justify-between  sm:flex-row flex-col sm:gap-y-0 gap-y-4 p-4  ">
+      <div className=" flex-col max-w-w-64 ">
         <p className="text-base text-primary-color-light">Achivements</p>
-        <h1 className="text-2xl ">Delivering value since 2008</h1>
+        <h1 className="text-2xl font-semibold">Delivering value since 2008</h1>
       </div>
-      <div className="flex flex-col sm:w-64 w-full">
-        <h1 className="text-4xl text-secondry-color">1050 MT</h1>
+      <div className="flex flex-col max-w-64 ">
+        <h1 className="text-4xl text-secondry-color font-semibold">1050 MT</h1>
         <p>Growth Capacity Per Day</p>
       </div>
-      <div className="flex flex-col sm:w-64 w-full">
-        <h1 className="text-4xl text-secondry-color">98 %</h1>
+      <div className="flex flex-col max-w-64 ">
+        <h1 className="text-4xl text-secondry-color font-semibold">98 %</h1>
         <p>Happy clients</p>
       </div>
-      <div className="flex flex-col sm:w-64 w-full">
-        <h1 className="text-4xl text-secondry-color">688 K</h1>
+      <div className="flex flex-col max-w-64 ">
+        <h1 className="text-4xl text-secondry-color font-semibold">688 K</h1>
         <p>Sales of our Products</p>
       </div>
     </div>

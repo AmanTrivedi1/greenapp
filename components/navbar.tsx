@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import { ThemeButton } from "./themeButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
-      <div>
+      <div className="max-w-[1300px] m-auto">
         <header className="">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <motion.div
@@ -22,19 +23,23 @@ const Navbar = () => {
             </motion.div>
             <nav className="hidden md:flex space-x-6">
               {["Products", "About", "Blog", "Contact"].map((item, index) => (
-                <motion.a
+                <motion.div
                   key={item}
-                  href="#"
-                  className=" hover:text-primary-color-light transition-colors"
                   whileHover={{ scale: 1.1 }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  {item}
-                </motion.a>
+                  <Link
+                    href={`/${item.toLowerCase()}`} 
+                    className="hover:text-primary-color-light transition-colors"
+                  >
+                    {item}
+                  </Link>
+                </motion.div>
               ))}
             </nav>
+
             <motion.div
               className=""
               whileHover={{ scale: 1.05 }}
@@ -68,15 +73,15 @@ const Navbar = () => {
               >
                 <X className="w-6 h-6 " />
               </button>
-              <nav className="flex flex-col   space-y-4 mt-12">
-                {["Products", "About", "Blog", "Contact"].map((item) => (
-                  <a
+              <nav className="flex flex-col space-y-4 mt-12">
+                {["Products", "About", "Contact"].map((item) => (
+                  <Link
                     key={item}
-                    href="#"
-                    className=" hover:text-primary-color-light transition-colors"
+                    href={`/${item.toLowerCase()}`} // Dynamically generate the route in lowercase
+                    className="hover:text-primary-color-light transition-colors"
                   >
                     {item}
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </motion.div>

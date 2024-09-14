@@ -17,7 +17,6 @@ import AchiveMentSection from "@/components/AchiveMentSection";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-
 export default function HomePage() {
   const [activeProduct, setActiveProduct] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -199,7 +198,6 @@ export default function HomePage() {
 
   return (
     <div className="max-w-[1300px] m-auto">
-      <Navbar/>
       <div className="min-h-screen ">
         <main className="container mx-auto px-4 ">
           <AnimatedSection>
@@ -269,7 +267,7 @@ export default function HomePage() {
         <main className="">
           <AnimatedSection>
             <div className=" px-4  mb-8 rounded-lg  ">
-              <div className="">
+              {/* <div className="">
                 <h1 className="text-3xl font-semibold mb-4">
                   Best Quality Poultry Feed Supplements
                 </h1>
@@ -304,8 +302,9 @@ export default function HomePage() {
                 <Button className="mt-4 bg-primary-color-light hover:bg-secondry-color ">
                   More about priducts
                 </Button>
-              </div>
-              <div className="relative mt-8">
+              </div> */}
+
+              <div className="relative ">
                 <div className="overflow-hidden">
                   <div
                     className="flex transition-transform duration-300 ease-in-out"
@@ -349,7 +348,7 @@ export default function HomePage() {
           </AnimatedSection>
 
           <>
-            <AnimatedSection>
+            {/* <AnimatedSection>
               <div className="p-4 space-y-4 ">
                 <div className="flex justify-between items-center">
                   <div>
@@ -422,8 +421,76 @@ export default function HomePage() {
                   ))}
                 </div>
               </div>
-            </AnimatedSection>
+            </AnimatedSection> */}
           </>
+          <div>
+            <AnimatedSection>
+              <div className="p-4 sm:mt-20">
+                <div>
+                  <p className="text-primary-color-light text-xl ">
+                    Animal Health Products
+                  </p>
+                  <h1 className="text-3xl font-semibold">AMINOSz</h1>
+                </div>
+                <div className="mt-10">
+                  <BigCrousel />
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection>
+              <section className="container mx-auto px-4 py-16">
+                <h2 className="text-3xl font-bold text-center mb-12">
+                  Our Awesome Services
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {[
+                    {
+                      icon: <MdOutlineHighQuality />,
+                      title: "Quality Ingredients",
+                      description:
+                        "We use only the highest quality, scientifically-backed ingredients in our formulations.",
+                    },
+                    {
+                      icon: <FaFlask />,
+                      title: "Advanced Formulas",
+                      description:
+                        "Our supplements are designed by nutrition experts for maximum effectiveness.",
+                    },
+                    {
+                      icon: <FaTruck />,
+                      title: "Fast Shipping",
+                      description:
+                        "Get your supplements delivered quickly with our efficient shipping process.",
+                    },
+                    {
+                      icon: <FaPhone />,
+                      title: "Expert Support",
+                      description:
+                        "Our team of nutrition experts is always ready to answer your questions.",
+                    },
+                  ].map((service, index) => (
+                    <motion.div
+                      key={index}
+                      className="rounded-lg border shadow-md p-6 text-center"
+                      whileHover={{ scale: 1.05 }}
+                      {...fadeInUp}
+                    >
+                      <div className="w-16 h-16 border border-secondry-color bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div className="text-3xl dark:text-black ">
+                          {service.icon}
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2">
+                        {service.title}
+                      </h3>
+                      <p>{service.description}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </section>
+            </AnimatedSection>
+          </div>
 
           <AnimatedSection>
             <div>
@@ -431,72 +498,6 @@ export default function HomePage() {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection>
-            <div className="p-4 sm:mt-20">
-              <div>
-                <p className="text-primary-color-light text-xl ">
-                  Animal Health Products
-                </p>
-                <h1 className="text-3xl font-semibold">AMINOSz</h1>
-              </div>
-              <div className="mt-10">
-                <BigCrousel />
-              </div>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection>
-            <section className="container mx-auto px-4 py-16">
-              <h2 className="text-3xl font-bold text-center mb-12">
-                Our Awesome Services
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {[
-                  {
-                    icon: <MdOutlineHighQuality />,
-                    title: "Quality Ingredients",
-                    description:
-                      "We use only the highest quality, scientifically-backed ingredients in our formulations.",
-                  },
-                  {
-                    icon: <FaFlask />,
-                    title: "Advanced Formulas",
-                    description:
-                      "Our supplements are designed by nutrition experts for maximum effectiveness.",
-                  },
-                  {
-                    icon: <FaTruck />,
-                    title: "Fast Shipping",
-                    description:
-                      "Get your supplements delivered quickly with our efficient shipping process.",
-                  },
-                  {
-                    icon: <FaPhone />,
-                    title: "Expert Support",
-                    description:
-                      "Our team of nutrition experts is always ready to answer your questions.",
-                  },
-                ].map((service, index) => (
-                  <motion.div
-                    key={index}
-                    className="rounded-lg border shadow-md p-6 text-center"
-                    whileHover={{ scale: 1.05 }}
-                    {...fadeInUp}
-                  >
-                    <div className="w-16 h-16 border border-secondry-color bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <div className="text-3xl dark:text-black ">
-                        {service.icon}
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">
-                      {service.title}
-                    </h3>
-                    <p>{service.description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </section>
-          </AnimatedSection>
           <AnimatedSection>
             <div className="sm:my-10">
               <AchiveMentSection />
@@ -520,7 +521,6 @@ export default function HomePage() {
           </AnimatedSection>
         </main>
       </div>
-      <Footer/>
     </div>
   );
 }
