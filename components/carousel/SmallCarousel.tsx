@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/carousel";
 
 // Sample data structure
-const bgiCarouselData = [
+const SmallCarouselData = [
   {
     id: 1,
     name: "NOVARK VET HEALTH INC.",
@@ -73,13 +73,13 @@ const bgiCarouselData = [
   },
 ];
 
-export default function BigCrousel() {
+export default function SmallCrousel() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
     <Carousel className="">
       <CarouselContent>
-        {bgiCarouselData.map((item) => (
+        {SmallCarouselData.map((item) => (
           <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
             <div className="p-1">
               <Card

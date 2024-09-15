@@ -1,5 +1,7 @@
-"use clinent";
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import {
   Accordion,
   AccordionContent,
@@ -8,12 +10,35 @@ import {
 } from "@/components/ui/accordion";
 
 const AccordianSection = () => {
+  const [count, setCount] = useState(0);
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger animation only once
+    threshold: 0.3, // Adjust the threshold based on when you want the effect to start
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+      let start = 0;
+      const end = 1050;
+      const duration = 2000; // Duration in ms
+      const incrementTime = Math.ceil(duration / end);
+
+      const timer = setInterval(() => {
+        start += 1;
+        setCount(start);
+        if (start === end) clearInterval(timer);
+      }, incrementTime);
+    }
+  }, [inView, controls]);
+
   return (
     <>
       <div className="flex flex-col md:flex-row mt-10 items-start p-4 gap-x-10 gap-y-6">
         <div className="w-full md:w-auto">
           <div className="relative">
-            <div className="relative bg-[#e0f7e9] rounded-xl overflow-hidden p-4">
+            <div className="relative rounded-xl overflow-hidden p-4">
               <div className="absolute -left-12 top-1/2 transform -translate-y-1/2 -z-10 w-24 md:w-28 h-auto">
                 <img
                   src="/22.png"
@@ -29,7 +54,20 @@ const AccordianSection = () => {
               />
             </div>
 
-            <div className="absolute bg-secondry-color rounded-lg flex items-center gap-2 sm:px-6 sm:py-3 px-4 py-2 bottom-0 left-0 sm:-bottom-10 sm:-left-10 shadow-lg">
+            <motion.div
+              className="absolute bg-secondry-color rounded-lg flex items-center gap-2 sm:px-6 sm:py-3 px-4 py-2 bottom-0 left-0 sm:-bottom-10 sm:-left-10 shadow-lg"
+              initial="hidden"
+              animate={controls}
+              ref={ref}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 0.8 },
+                },
+              }}
+            >
               <div className="icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -47,10 +85,12 @@ const AccordianSection = () => {
                 </svg>
               </div>
               <div>
-                <h1 className="sm:text-2xl text-base font-semibold">1050MT</h1>
+                <h1 className="sm:text-2xl text-base font-semibold">
+                  {count}MT
+                </h1>
                 <p className="sm:text-base text-sm">Growth Capacity Per Day</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 

@@ -9,7 +9,7 @@ export default function ContactPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-1/2">
-            <h3 className="text-green-600 font-medium mb-2">HAVE QUESTIONS?</h3>
+            <h3 className="text-primary-color-light font-medium mb-2">HAVE QUESTIONS?</h3>
             <h2 className="text-3xl font-bold mb-6">Send us a Message</h2>
             <form className="space-y-4">
               <Input placeholder="Name" />
@@ -21,7 +21,7 @@ export default function ContactPage() {
                 placeholder="Tell Us About Project *"
                 className="min-h-[150px]"
               />
-              <Button className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto px-8">
+              <Button className="bg- text-white w-full sm:w-auto px-8">
                 Get In Touch
               </Button>
             </form>
@@ -29,7 +29,7 @@ export default function ContactPage() {
           <div className="lg:w-1/2">
             <h2 className="text-3xl font-bold mb-2">Have any questions?</h2>
             <h3 className="text-2xl font-bold mb-4">Information</h3>
-            <p className="text-gray-600 mb-6">
+            <p className=" mb-6">
               Electing the naturally best since 2008.
             </p>
             <div className="space-y-6">
@@ -67,18 +67,18 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold">{location.name}</h4>
-                    <p className="text-gray-600">{location.address}</p>
+                    <p className="">{location.address}</p>
                   </div>
                 </div>
               ))}
               <div className="flex items-start gap-4">
-                <div className="bg-green-500 p-2 rounded-full">
-                  <Mail className="text-white" />
+                <div className="bg-primary-color-light p-2 rounded-full">
+                  <Mail className="text text-white" />
                 </div>
                 <div>
                   <h4 className="font-semibold">Email ID Entreprise</h4>
-                  <p className="text-gray-600">info@novarkvethealth.com</p>
-                  <p className="text-gray-600">sales@novarkvethealth.com</p>
+                  <p className="">info@novarkvethealth.com</p>
+                  <p className="">sales@novarkvethealth.com</p>
                 </div>
               </div>
             </div>

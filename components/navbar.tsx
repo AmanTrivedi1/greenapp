@@ -19,7 +19,7 @@ const Navbar = () => {
             >
               <span className="text-2xl font-bold text-primary-color-light">
                 <Link href="/">
-                  <img className="max-w-[100px]" src="/logo.png" alt="logo" />
+                  <img className="max-w-[180px]" src="/logo.png" alt="logo" />
                 </Link>
               </span>
             </motion.div>

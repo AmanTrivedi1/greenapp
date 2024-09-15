@@ -2,110 +2,22 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Leaf} from "lucide-react";
+import { Leaf } from "lucide-react";
 import { MdOutlineHighQuality } from "react-icons/md";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
 import { FaFlask, FaPhone, FaTruck } from "react-icons/fa";
 import { AnimatedSection } from "@/components/Animation";
-import BigCrousel from "@/components/BigCrousel";
+import BigCrousel from "@/components/carousel/BigCrousel";
 import AccordianSection from "@/components/AccordianSection";
 import AchiveMentSection from "@/components/AchiveMentSection";
-// import Navbar from "@/components/navbar";
-// import Footer from "@/components/footer";
+import SmallCrousel from "@/components/carousel/SmallCarousel";
+import MidClouser from "@/components/carousel/MidCrousel";
 
 export default function HomePage() {
   const [activeProduct, setActiveProduct] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-  // const [startIndex, setStartIndex] = useState(0);
-  // const [visibleCards, setVisibleCards] = useState(4);
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     if (window.innerWidth < 640) {
-  //       setVisibleCards(1);
-  //     } else if (window.innerWidth < 1024) {
-  //       setVisibleCards(2);
-  //     } else {
-  //       setVisibleCards(4);
-  //     }
-  //   };
-
-  //   handleResize();
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
-
-  // const items = [
-  //   {
-  //     title: "Toxin Binder",
-  //     content: "TOXIN BINDER NOVATOXIN (FEED GRADE)",
-  //     image: "/toxinbinder.png",
-  //   },
-  //   {
-  //     title: "Chlortetracycline",
-  //     content: "Chlortetracycline- 15% NOVACTC (FEED GRADE)",
-  //     image: "/chlor.png",
-  //   },
-  //   {
-  //     title: "DLMENHIONINE 99%",
-  //     content: "DLMENTHIONINE 99% NOVAMET (FEED GRADE)",
-  //     image: "/Dlmet.png",
-  //   },
-  //   {
-  //     title: "LYSINE HCL-98.5%",
-  //     content: "LYSINE HCL-98.5% (FEED GRADE), Only for animal feed.",
-  //     image: "/Lysin.png",
-  //   },
-  //   {
-  //     title: "VITAMIN-E 50%",
-  //     content: "[FEED GRADE] NOVAVIT-E [FEED GRADE), Only for animal feed.",
-  //     image: "/vitamin.png",
-  //   },
-  //   {
-  //     title: "TYLOSIN PHOSPHATE 10%",
-  //     content: "NOVATYL-TYLOSIN PHOSPHATE 10%.",
-  //     image: "/tylosin.png",
-  //   },
-  //   {
-  //     title: "TIAMULIN HYDROGEN FUMARATE 10%",
-  //     content: "TIAMULIN HYDROGEN FUMARATE 10%. (FEED GRADE) NOVATIAM.",
-  //     image: "/tiamulin.png",
-  //   },
-  //   {
-  //     title: "CHOLINE CHLORIDE-60%",
-  //     content: "CHOLINE CHLORIDE-60% (FEED GRADE) - NOVACHC",
-  //     image: "/choline.png",
-  //   },
-  //   {
-  //     title: "L-TRYPTOPHAN 98.5%",
-  //     content: "L-TRYPTOPHAN 98.5% NOVATRYP - (FEED GRADE).",
-  //     image: "/ltryp.png",
-  //   },
-  //   {
-  //     title: "LLTHREONINE 58.5%",
-  //     content: "L LTHREONINE 58.5% NOVATHR (FEED GRADE.)",
-  //     image: "/llthr.png",
-  //   },
-  // ];
-
-  // const nextSlidee = () => {
-  //   setStartIndex((prevIndex) => (prevIndex + visibleCards) % items.length);
-  // };
-
-  // const prevSlidee = () => {
-  //   setStartIndex(
-  //     (prevIndex) => (prevIndex - visibleCards + items.length) % items.length
-  //   );
-  // };
-
-  // const visibleItems = [
-  //   ...items.slice(startIndex),
-  //   ...items.slice(0, startIndex),
-  // ].slice(0, visibleCards);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % bestQuality.length);
@@ -267,43 +179,6 @@ export default function HomePage() {
         <main className="">
           <AnimatedSection>
             <div className=" px-4  mb-8 rounded-lg  ">
-              {/* <div className="">
-                <h1 className="text-3xl font-semibold mb-4">
-                  Best Quality Poultry Feed Supplements
-                </h1>
-                <p className=" mb-4">
-                  NOVARK Group is a large manufacturer of Amino acids for
-                  livestock and pets production and sales together. Besides it
-                  is also one of the Top 50 Enterprises in Europe. The Company
-                  was established in 2008 and restructured into INC.
-                </p>
-                <ul>
-                  <li className="flex items-center gap-x-1">
-                    <Check className="h-4 w-4 text-primary-color-light" />{" "}
-                    LYSINE HCL - 98.5%
-                  </li>
-                  <li className="flex items-center gap-x-1">
-                    <Check className="h-4 w-4 text-primary-color-light" />{" "}
-                    VITAMIN- E 50%
-                  </li>
-                  <li className="flex items-center gap-x-1">
-                    <Check className="h-4 w-4 text-primary-color-light" />{" "}
-                    TYLOSIN PHOSPHATE 10%
-                  </li>
-                  <li className="flex items-center gap-x-1">
-                    <Check className="h-4 w-4 text-primary-color-light" />{" "}
-                    TIAMULIN HYDROGEN FUMARATE 10%
-                  </li>
-                  <li className="flex items-center gap-x-1">
-                    <Check className="h-4 w-4 text-primary-color-light" />{" "}
-                    CHOLINE CHLORIDE-60%
-                  </li>
-                </ul>
-                <Button className="mt-4 bg-primary-color-light hover:bg-secondry-color ">
-                  More about priducts
-                </Button>
-              </div> */}
-
               <div className="relative ">
                 <div className="overflow-hidden">
                   <div
@@ -347,82 +222,6 @@ export default function HomePage() {
             </div>
           </AnimatedSection>
 
-          <>
-            {/* <AnimatedSection>
-              <div className="p-4 space-y-4 ">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h2 className="text-primary-color-light text-semibold text-2xl mb-2">
-                      What we do
-                    </h2>
-
-                    <div className="mb-8">
-                      <h1 className="text-3xl font-semibold mb-4">
-                        Best Quality Poutry Feed Supplements Products
-                      </h1>
-                      <p className=" mb-4">
-                        NOVARK VET HEALTH INC. is a global leader in animal
-                        health dedicated to innovating and delivering products
-                        and services to prevent and treat disease in farm
-                        animals and pets creating value for farmers pet owners
-                        veterinarians stakeholders and society as a whole.
-                      </p>
-
-                      <Button className="mt-4 bg-primary-color-light hover:bg-secondry-color ">
-                        More about priducts
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-x-2 flex items-end">
-                  <Button
-                    onClick={prevSlidee}
-                    variant="outline"
-                    size="icon"
-                    className="rounded-full"
-                  >
-                    <ChevronLeft className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    onClick={nextSlidee}
-                    variant="outline"
-                    size="icon"
-                    className="rounded-full"
-                  >
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {visibleItems.map((item, index) => (
-                    <Card
-                      key={index}
-                      className="overflow-hidden transition-all duration-300 transform hover:scale-105"
-                    >
-                      <CardHeader className="bg-gradient-to-r from-primary-color  to-secondry-color p-4">
-                        <CardTitle className=" text-center">
-                          {item.title}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="p-4 flex items-center justify-center flex-col">
-                        <div className="bg-primary-color-light w-40 h-40 rounded-full flex items-center justify-center">
-                          <img
-                            className="w-36 h-36 object-contain rounded-full "
-                            src={item.image}
-                            alt="image"
-                          />
-                        </div>
-                        <div>
-                          <p className="text-center text-sm mt-2">
-                            {item.content}
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            </AnimatedSection> */}
-          </>
           <div>
             <AnimatedSection>
               <div className="p-4 sm:mt-20">
@@ -430,9 +229,19 @@ export default function HomePage() {
                   <p className="text-primary-color-light text-xl ">
                     Animal Health Products
                   </p>
-                  <h1 className="text-3xl font-semibold">AMINOSz</h1>
+                </div>
+
+                <div className="mt-10">
+                  <h1 className="text-3xl font-semibold">Amino acids</h1>
+                  <SmallCrousel />
+                </div>
+
+                <div className="mt-10">
+                  <h1 className="text-3xl font-semibold">Antibiotics</h1>
+                  <MidClouser />
                 </div>
                 <div className="mt-10">
+                  <h1 className="text-3xl font-semibold">Feed Supplements</h1>
                   <BigCrousel />
                 </div>
               </div>
