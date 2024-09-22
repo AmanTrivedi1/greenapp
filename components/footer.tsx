@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
           <div className="border-t  mt-8 pt-8 text-center">
             <p className="">
-              Copyright 2023. All Rights Reserved by NOVARK VET HEALTH INC.
+              Copyright 2024. All Rights Reserved by NOVARK VET HEALTH INC.
             </p>
           </div>
         </div>

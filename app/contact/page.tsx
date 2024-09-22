@@ -77,8 +77,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Email ID Entreprise</h4>
-                  <p className="">info@novarkvethealth.com</p>
-                  <p className="">sales@novarkvethealth.com</p>
+                  <p className="">support@novarkvethealth.be</p>
                 </div>
               </div>
             </div>
