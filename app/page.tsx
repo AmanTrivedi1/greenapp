@@ -16,8 +16,6 @@ import SmallCrousel from "@/components/carousel/SmallCarousel";
 import MidClouser from "@/components/carousel/MidCrousel";
 import {
   AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
