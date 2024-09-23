@@ -1,7 +1,7 @@
 " use client";
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion"; 
 
 interface ProductCardProps {
   product: {
@@ -39,7 +39,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         variants={staggerContainer}
       >
        
-        <div className="w-full dark:bg-background md:w-1/2 sticky top-0 h-auto">
+        <div className="w-full dark:bg-background  md:w-1/2 sticky top-0 h-auto">
           <motion.h2 className="text-3xl font-bold mb-4" variants={fadeInUp}>
             {product.title}
           </motion.h2>
