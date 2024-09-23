@@ -56,6 +56,23 @@ const products = [
   },
   {
     id: 4,
+    title: "Novatryp - L-Tryptophan 98%",
+    imageUrl: "/product-tryptophan.jpeg",
+    details: [
+      {
+        heading: "Essential Amino Acid",
+        subheading: "Supports Animal Growth and Health",
+        text: "Novatryp is a premium-grade L-Tryptophan supplement with 98% purity, designed to meet the essential amino acid needs of livestock. L-Tryptophan is crucial for protein synthesis, growth, and regulating serotonin levels, which improve stress management and overall well-being in poultry, swine, and cattle.",
+      },
+      {
+        heading: "Benefits for Animal Nutrition",
+        subheading: "Optimizes Feed Efficiency and Productivity",
+        text: "Novatryp provides an effective way to boost your livestock’s growth and health, ensuring a well-balanced amino acid profile for improved productivity and stress resilience.",
+      },
+    ],
+  },
+  {
+    id: 5,
     title: "Novactc - Chlortetracycline 15%",
     imageUrl: "/product-4.jpeg",
     details: [
@@ -72,7 +89,7 @@ const products = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "Novatyl - Tylosin Phosphate 10%",
     imageUrl: "/product-5.jpeg",
     details: [
@@ -89,7 +106,7 @@ const products = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Novachc - Choline Chloride 60%",
     imageUrl: "/product-6.jpeg",
     details: [
@@ -106,53 +123,36 @@ const products = [
     ],
   },
   {
-    id: 7,
-    title: "Product 7",
-    imageUrl: "/dummy.png",
-    details: [
-      {
-        heading: "Active Noise Cancellation",
-        subheading: "Immersive Sound",
-        text: "Block out distractions with active noise cancellation, allowing you to focus on your music, podcasts, or calls.",
-      },
-      {
-        heading: "Long Battery Life",
-        subheading: "Up to 24 Hours",
-        text: "With up to 24 hours of battery life, the Wireless Earbuds Max keep you connected and entertained all day long.",
-      },
-    ],
-  },
-  {
     id: 8,
-    title: "Product 8",
-    imageUrl: "/dummy.png",
+    title: "Novatiam - Tiamulin Hydrogen Fumarate 10%",
+    imageUrl: "/product-novatiam.jpeg",
     details: [
       {
-        heading: "Voice Assistant Integration",
-        subheading: "Control with Your Voice",
-        text: "Integrate with your preferred voice assistant, like Alexa or Google Assistant, to control your home with just your voice.",
+        heading: "Antimicrobial Solution",
+        subheading: "Effective Against Various Pathogens",
+        text: "Novatiam is a potent antibiotic feed additive containing 10% Tiamulin Hydrogen Fumarate, designed to combat respiratory and enteric infections in livestock. It is especially effective against Mycoplasma and bacterial infections in swine and poultry, promoting healthier animals and improving overall productivity.",
       },
       {
-        heading: "High-Fidelity Sound",
-        subheading: "Crisp and Clear Audio",
-        text: "Fill any room with rich, high-fidelity sound, perfect for listening to music, podcasts, or audiobooks.",
+        heading: "Improves Animal Health and Productivity",
+        subheading: "Reduces Morbidity and Mortality",
+        text: "Novatiam ensures effective management of infections, helping to reduce disease-related losses and enhance the productivity and well-being of your livestock.",
       },
     ],
   },
   {
     id: 9,
-    title: "Product 9",
-    imageUrl: "/dummy.png",
+    title: "Novatoxin - Toxin Binder",
+    imageUrl: "/product-toxin.jpeg",
     details: [
       {
-        heading: "Eco-Friendly Commute",
-        subheading: "Reduce Your Carbon Footprint",
-        text: "Travel in style while reducing your environmental impact with the eco-friendly Electric Bike E300, perfect for city commuting.",
+        heading: "Effective Toxin Control",
+        subheading: "Binds and Neutralizes Toxins",
+        text: "Novatoxin is an advanced toxin binder designed to protect livestock from the harmful effects of mycotoxins commonly found in feed. It binds and neutralizes a wide range of mycotoxins, safeguarding animal health, improving feed quality, and promoting optimal growth and performance in poultry, swine, and cattle.",
       },
       {
-        heading: "Long-Lasting Battery",
-        subheading: "Up to 50 Miles Per Charge",
-        text: "Ride up to 50 miles on a single charge with the E300’s long-lasting battery, making it ideal for longer trips.",
+        heading: "Enhances Animal Safety and Performance",
+        subheading: "Reduces Toxic Stress and Promotes Healthy Growth",
+        text: "Novatoxin is an essential addition to feed formulations, helping maintain the health and performance of your livestock by reducing the risk of mycotoxin contamination.",
       },
     ],
   },

@@ -23,6 +23,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import Link from "next/link";
 interface Product {
   name: string;
   // icon: React.ForwardRefExoticComponent<any>;
@@ -69,51 +70,51 @@ export default function HomePage() {
 
   const products = [
     {
-      name: "CHLORTETRACYCLINE - 15% - (FEED GRADE)",
+      name: "NOVALYS-L LYSINE HCl 98.5%",
       icon: Leaf,
       color: "bg-green-500",
       points: [
-        "Supports animal health",
-        "Improves feed efficiency",
-        "Contains 15% chlortetracycline",
-        "Effective for poultry and livestock",
-        "Promotes growth and weight gain",
+        "High purity: 98.5% Lysine HCl for maximum bioavailability.",
+        "Supports muscle growth and protein utilization.",
+        "Improves feed conversion efficiency.",
+        "Enhances immune system performance.",
+        "Suitable for poultry, cattle, swine, and aquaculture.",
       ],
     },
     {
-      name: "VITAMIN- E50% [FEED GRADE] NOVAVIT-E",
+      name: "NOVAMET - DL METHIONINE 99%",
       icon: Leaf,
       color: "bg-red-500",
       points: [
-        "Boosts immune system",
-        "Rich in antioxidants",
-        "Enhances reproductive performance",
-        "Improves meat quality",
-        "Contains 50% Vitamin E",
+        "Purity: 99% DL-Methionine for superior absorption and effectiveness.",
+        "Supports optimal growth, muscle development, and overall animal health.",
+        "Improves feed conversion and reduces feed costs.",
+        "Enhances liver function and antioxidant capacity.",
+        "Ideal for poultry, cattle, swine, and aquaculture.",
       ],
     },
     {
-      name: "L-TRYPTOPHAN 98.5% (FEED GRADE)",
+      name: "NOVATHR-L THREONINE 98.5%",
       icon: Leaf,
       color: "bg-orange-500",
       points: [
-        "Promotes serotonin production",
-        "Improves animal behavior",
-        "98.5% purity",
-        "Reduces aggression in animals",
-        "Improves feed intake",
+        "High purity: 98.5% L-Threonine for optimal bioavailability.",
+        "Supports protein synthesis and muscle development.",
+        "Enhances immune system performance and gut health.",
+        "Improves feed efficiency and overall animal performance.",
+        "Suitable for use in poultry, swine, cattle, and aquaculture.",
       ],
     },
     {
-      name: "L -THREONINE 58.5% - INOTHRE (FEED GRADE)",
+      name: "NOVATRYP - L-TRYPTOPHAN 98%",
       icon: Leaf,
       color: "bg-yellow-500",
       points: [
-        "Improves protein synthesis",
-        "Essential amino acid",
-        "Supports muscle growth",
-        "58.5% purity",
-        "Reduces nitrogen excretion",
+        "Contains 98% pure L-Tryptophan for maximum bioavailability.",
+        "Supports protein synthesis and muscle growth.",
+        "Enhances stress resistance and improves animal behavior.",
+        "Promotes better feed efficiency and overall performance.",
+        "Ideal for use in poultry, swine, and cattle.",
       ],
     },
   ];
@@ -142,12 +143,14 @@ export default function HomePage() {
                 supports farmers livelihoods, and provides nutrient-rich meat
                 milk fish and eggs to nourish and support human health
               </p>
-              <Button
-                className="sm:px-10  sm:text-xl sm:py-6"
-                variant="website"
-              >
-                Explore Products
-              </Button>
+              <Link href="/products">
+                <Button
+                  className="sm:px-10  sm:text-xl sm:py-6"
+                  variant="website"
+                >
+                  Explore Products
+                </Button>
+              </Link>
             </section>
             <style jsx>{`
               .text-with-image {

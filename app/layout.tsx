@@ -23,6 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/newLogo.png" type="image/png" />
+      </head>
       <body className={poppins.className}>
         <ThemeProvider
           attribute="class"

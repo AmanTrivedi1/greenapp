@@ -1,5 +1,5 @@
 "use clinent";
-import { Facebook, Instagram, PhoneCall, Youtube } from "lucide-react";
+import { Facebook, Instagram, PhoneCall, Youtube, Linkedin } from "lucide-react";
 
 import Link from "next/link";
 import React from "react";
@@ -48,9 +48,9 @@ const Footer = () => {
                   <Facebook />
                 </Link>
                 <Link href="https://www.google.com/">
-                  <Youtube />
+                  <Linkedin />
                 </Link>
-                <Link href="https://www.google.com/">
+                <Link href="tel:+32-466-91-07-78">
                   <PhoneCall />
                 </Link>
               </div>

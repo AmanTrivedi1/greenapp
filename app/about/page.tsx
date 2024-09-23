@@ -13,6 +13,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { Dna, Leaf, ShieldCheck, Truck, Users } from "lucide-react";
 import { useState } from "react";
+import Link from 'next/link';
 
 export default function AboutPage() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -141,12 +142,14 @@ export default function AboutPage() {
               Discover our range of premium amino supplements and take your
               fitness journey to the next level.
             </p>
-            <Button
-              size="lg"
-              className=" bg-primary-color-light hover:bg-primary-color hover:text-white"
-            >
-              Explore Our Products
-            </Button>
+            <Link href="/products">
+              <Button
+                size="lg"
+                className="bg-primary-color-light hover:bg-primary-color hover:text-white"
+              >
+                Explore Our Products
+              </Button>
+            </Link>
           </section>
         </main>
       </div>

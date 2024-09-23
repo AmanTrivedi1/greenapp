@@ -13,20 +13,20 @@ const MidCarouselData = [
   {
     id: 1,
     name: "NOVARK VET HEALTH INC.",
-    subheading: "LYSINE HCL-98.5%",
-    image: "/big1.jpg",
+    subheading: "NOVACTC - CHLORTETRACYCLINE 15%",
+    image: "/product-4.jpeg",
   },
   {
     id: 2,
     name: "NOVARK VET HEALTH INC.",
-    subheading: "VITAMIN-E 50%",
-    image: "/big2.jpg",
+    subheading: "NOVATYL - TYLOSIN PHOSPHATE 10%",
+    image: "/product-5.jpeg",
   },
   {
     id: 3,
     name: "NOVARK VET HEALTH INC.",
-    subheading: "TYLOSIN PHOSPHATE 10%",
-    image: "/big3.jpg",
+    subheading: "NOVACHC - CHOLINE CHLORIDE 60%",
+    image: "/product-6.jpeg",
   },
 ];
 
