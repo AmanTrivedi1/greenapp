@@ -12,7 +12,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Farming app",
+  title: "NOVARK VET HEALTH INC.",
   description: "This app will help you to grow better",
 };
 
