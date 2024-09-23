@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Leaf } from "lucide-react";
+import { ArrowRight, Leaf } from "lucide-react";
 import { MdOutlineHighQuality } from "react-icons/md";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -14,6 +14,21 @@ import AccordianSection from "@/components/AccordianSection";
 import AchiveMentSection from "@/components/AchiveMentSection";
 import SmallCrousel from "@/components/carousel/SmallCarousel";
 import MidClouser from "@/components/carousel/MidCrousel";
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+interface Product {
+  name: string;
+  // icon: React.ForwardRefExoticComponent<any>;
+  color: string;
+  points: string[];
+}
 
 export default function HomePage() {
   const [activeProduct, setActiveProduct] = useState(0);
@@ -35,6 +50,7 @@ export default function HomePage() {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const bestQuality = [
     {
@@ -54,51 +70,51 @@ export default function HomePage() {
   const products = [
     {
       name: "CHLORTETRACYCLINE - 15% - (FEED GRADE)",
-      image: "MdOutlineHighQuality ",
-      placeimage:
-        "https://www.milkspecialties.com/wp-content/uploads/2022/01/animal-nutrition-hero-2.jpg",
-      rating: 4.5,
-      time: "30 days",
-      difficulty: "Easy",
-      servings: "60 capsules",
       icon: Leaf,
       color: "bg-green-500",
+      points: [
+        "Supports animal health",
+        "Improves feed efficiency",
+        "Contains 15% chlortetracycline",
+        "Effective for poultry and livestock",
+        "Promotes growth and weight gain",
+      ],
     },
     {
       name: "VITAMIN- E50% [FEED GRADE] NOVAVIT-E",
-      image: "/placeholder.svg",
-      placeimage:
-        "https://www.indianchemicalnews.com/public/thumbs/news/2021/10/10905/animal-nut.jpg",
-      rating: 4.8,
-      time: "30 days",
-      difficulty: "Medium",
-      servings: "30 scoops",
       icon: Leaf,
       color: "bg-red-500",
+      points: [
+        "Boosts immune system",
+        "Rich in antioxidants",
+        "Enhances reproductive performance",
+        "Improves meat quality",
+        "Contains 50% Vitamin E",
+      ],
     },
     {
       name: "L-TRYPTOPHAN 98.5% (FEED GRADE)",
-      image: "/placeholder.svg",
-      placeimage:
-        "https://www.dsm-firmenich.com/corporate/businesses/animal-nutrition-health/_jcr_content/root/responsivegrid/container_copy_copy_.coreimg.82.1280.jpeg/1682948276088/banner-anh.jpeg",
-      rating: 4.7,
-      time: "60 days",
-      difficulty: "Easy",
-      servings: "120 softgels",
       icon: Leaf,
       color: "bg-orange-500",
+      points: [
+        "Promotes serotonin production",
+        "Improves animal behavior",
+        "98.5% purity",
+        "Reduces aggression in animals",
+        "Improves feed intake",
+      ],
     },
     {
       name: "L -THREONINE 58.5% - INOTHRE (FEED GRADE)",
-      image: "/placeholder.svg",
-      placeimage:
-        "https://s7g10.scene7.com/is/image/kerry/farmer-feeding-chicken?ts=1653859676408&dpr=off&$HERO-PRIMARY-Small$",
-      rating: 4.7,
-      time: "60 days",
-      difficulty: "Easy",
-      servings: "120 softgels",
       icon: Leaf,
       color: "bg-yellow-500",
+      points: [
+        "Improves protein synthesis",
+        "Essential amino acid",
+        "Supports muscle growth",
+        "58.5% purity",
+        "Reduces nitrogen excretion",
+      ],
     },
   ];
 
@@ -114,10 +130,11 @@ export default function HomePage() {
         <main className="container mx-auto px-4 ">
           <AnimatedSection>
             <section className="text-center sm:mt-20 md:mt-16 mt-10 mb-16">
-              <h1 className="sm:text-4xl text-3xl md:text-6xl font-bold  mb-4">
+              <h1 className="sm:text-4xl text-4xl md:text-7xl font-bold  mb-4">
                 <div className="flex flex-col gap-y-2">
-                  <span className="">Best Quality Poultry</span>
-                  <span>Feed Supplements</span>
+                  {/* Apply image background to the text */}
+                  <span className="text-with-image">Best Quality Poultry</span>
+                  <span className="text-with-image">Feed Supplements</span>
                 </div>
               </h1>
               <p className="sm:text-xl text-base   max-w-4xl m-auto mb-8">
@@ -132,17 +149,25 @@ export default function HomePage() {
                 Explore Products
               </Button>
             </section>
+            <style jsx>{`
+              .text-with-image {
+                background: url("/testimage.jpg") no-repeat center;
+                background-size: cover;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+            `}</style>
           </AnimatedSection>
           <AnimatedSection>
             <section className="mb-16">
-              <h2 className="text-3xl font-semibold text-center  mb-8">
+              <h2 className="text-3xl font-semibold text-center mb-8">
                 What we have for you
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {products.map((product, index) => (
                   <motion.div
                     key={product.name}
-                    className={` rounded-lg border shadow-lg overflow-hidden ${
+                    className={`rounded-lg border shadow-lg overflow-hidden ${
                       index === activeProduct
                         ? "ring-4 ring-primary-color-light"
                         : ""
@@ -159,13 +184,42 @@ export default function HomePage() {
                       <h3 className="text-xl font-semibold mb-2">
                         {product.name}
                       </h3>
-                      <p className=" mb-4">
-                        Give a best to your animal with
+                      <p className="mb-4">
+                        Give the best to your animal with{" "}
                         {product.name.toLowerCase()} supplement.
                       </p>
-                      <Button className="bg-primary-color-light hover:bg-secondry-color  transition-colors">
-                        Learn More
-                      </Button>
+
+                      <AlertDialog>
+                        <AlertDialogTrigger asChild>
+                          <Button
+                            className="bg-primary-color-light hover:bg-secondry-color transition-colors"
+                            onClick={() => setSelectedProduct(product)}
+                          >
+                            Learn More
+                          </Button>
+                        </AlertDialogTrigger>
+                        {selectedProduct && (
+                          <AlertDialogContent>
+                            <AlertDialogHeader>
+                              <AlertDialogTitle>
+                                {selectedProduct.name}
+                              </AlertDialogTitle>
+                              <AlertDialogDescription>
+                                <ul className="list-disc ml-4">
+                                  {selectedProduct.points.map((point, i) => (
+                                    <li key={i}>{point}</li>
+                                  ))}
+                                </ul>
+                              </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                              <Button onClick={() => setSelectedProduct(null)}>
+                                Close
+                              </Button>
+                            </AlertDialogFooter>
+                          </AlertDialogContent>
+                        )}
+                      </AlertDialog>
                     </div>
                   </motion.div>
                 ))}
@@ -232,16 +286,33 @@ export default function HomePage() {
                 </div>
 
                 <div className="mt-10">
-                  <h1 className="text-3xl font-semibold">Amino acids</h1>
+                  <div className="flex  items-center justify-between">
+                    <h1 className="text-3xl font-semibold">Amino acids</h1>
+                    <p className="text-xs sm:hidden  flex items-center gap-x-2">
+                      Swipe right <ArrowRight size={12} />
+                    </p>
+                  </div>
                   <SmallCrousel />
                 </div>
 
                 <div className="mt-10">
-                  <h1 className="text-3xl font-semibold">Antibiotics</h1>
+                  <div className="flex  items-center justify-between">
+                    <h1 className="text-3xl font-semibold">Antibiotics</h1>
+                    <p className="text-xs sm:hidden  flex items-center gap-x-2">
+                      Swipe right <ArrowRight size={12} />
+                    </p>
+                  </div>
+
                   <MidClouser />
                 </div>
                 <div className="mt-10">
-                  <h1 className="text-3xl font-semibold">Feed Supplements</h1>
+                  <div className="flex  items-center justify-between">
+                    <h1 className="text-3xl font-semibold">Feed Supplements</h1>
+                    <p className="text-xs sm:hidden  flex items-center gap-x-2">
+                      Swipe right <ArrowRight size={12} />
+                    </p>
+                  </div>
+
                   <BigCrousel />
                 </div>
               </div>

@@ -5,9 +5,10 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  // CarouselNext,
-  // CarouselPrevious,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
+import Link from "next/link";
 
 // Sample data structure
 const SmallCarouselData = [
@@ -80,37 +81,41 @@ export default function SmallCrousel() {
     <Carousel className="">
       <CarouselContent>
         {SmallCarouselData.map((item) => (
-          <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/4">
             <div className="p-1">
-              <Card
-                className="relative overflow-hidden"
-                onMouseEnter={() => setHoveredId(item.id)}
-                onMouseLeave={() => setHoveredId(null)}
-              >
-                <CardContent className="p-0">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover aspect-[4/3]"
-                  />
-                  {hoveredId === item.id && (
-                    <div className="absolute inset-0  bg-black bg-opacity-50 flex items-end justify-center  transition-opacity duration-300">
-                      <div className="flex  flex-col items-center justify-center">
-                        <span className="text-white text-lg font-semibold">
-                          {item.name}
-                        </span>
-                        <p className="text-white">{item.subheading}</p>
+              <Link href="/products" passHref>
+                <Card
+                  className="relative overflow-hidden"
+                  onMouseEnter={() => setHoveredId(item.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                >
+                  <CardContent className="p-0">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover aspect-[4/3]"
+                    />
+                    {hoveredId === item.id && (
+                      <div className="absolute inset-0  bg-black bg-opacity-50 flex items-end justify-center  transition-opacity duration-300">
+                        <div className="flex  flex-col items-center justify-center">
+                          <span className="text-white text-lg font-semibold">
+                            {item.name}
+                          </span>
+                          <p className="text-white">{item.subheading}</p>
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
+                    )}
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* <CarouselPrevious />
-      <CarouselNext /> */}
+      <div className="sm:block hidden">
+        <CarouselPrevious />
+        <CarouselNext />
+      </div>
     </Carousel>
   );
 }
