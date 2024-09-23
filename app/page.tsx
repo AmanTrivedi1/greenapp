@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/alert-dialog";
 interface Product {
   name: string;
-  icon: React.ForwardRefExoticComponent<any>; // Adjust based on actual icon prop type
+  icon: React.ForwardRefExoticComponent<any>; 
   color: string;
   points: string[];
 }

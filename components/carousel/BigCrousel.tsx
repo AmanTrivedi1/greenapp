@@ -5,10 +5,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
-import Link from "next/link"; // Import the Link component from Next.js
+import Link from "next/link"; 
 
 // Sample data structure
 const bgiCarouselData = [
