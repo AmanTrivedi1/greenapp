@@ -26,7 +26,7 @@ export default function ContactPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/sendmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -35,6 +35,12 @@ export default function ContactPage() {
       const result = await res.json();
       if (result.success) {
         setResponseMessage("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
       } else {
         setResponseMessage("Failed to send message. Please try again.");
       }
