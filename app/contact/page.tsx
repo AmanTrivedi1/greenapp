@@ -125,10 +125,11 @@ export default function ContactPage() {
                   </div>
                 </div>
               ))}
-              <div className="flex items-start gap-4">
+              <div className="flex flex-col items-start gap-4">
                 <div>
                   <img className="max-w-40  h-40" src="qrcode.jpeg" alt="/" />
                 </div>
+                <div>For any queries kindly reach us to at: support@novarkvethealth.be</div>
               </div>
             </div>
           </div>

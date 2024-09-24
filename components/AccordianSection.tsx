@@ -48,7 +48,7 @@ const AccordianSection = () => {
               </div>
 
               <img
-                src="/1.jpg"
+                src="/landing-page.jpeg"
                 alt="ProductImage"
                 className="w-full rounded-lg  h-full"
               />
