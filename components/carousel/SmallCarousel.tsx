@@ -65,7 +65,7 @@ export default function SmallCrousel() {
                           <span className="text-white text-lg font-semibold">
                             {item.name}
                           </span>
-                          <p className="text-white">{item.subheading}</p>
+                          <p className="text-white text-center">{item.subheading}</p>
                         </div>
                       </div>
                     )}
