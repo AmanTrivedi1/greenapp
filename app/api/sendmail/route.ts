@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { name, email, phone, message } = body;
 
-    // Validate form data
+
     if (!name || !email || !message) {
       return NextResponse.json(
         { success: false, message: "All fields are required" },
@@ -14,19 +14,18 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Nodemailer transport configuration
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: "amantrivedi598@gmail.com",
-        pass: "yplr urfb zoei udpa", // Replace with your Gmail app password
+        pass: "yplr urfb zoei udpa", 
       },
     });
 
-    // Sending email
+ 
     await transporter.sendMail({
-      from: email, // Sender email
-      to: "amantrivedi598@gmail.com", // Your email
+      from: email, 
+      to: "amantrivedi598@gmail.com", 
       subject: `Contact form submission from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
     });

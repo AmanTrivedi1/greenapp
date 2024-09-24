@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Leaf, Phone, PhoneCall, X } from "lucide-react";
+import { ArrowRight, Leaf,  PhoneCall, X } from "lucide-react";
 import { MdOutlineHighQuality } from "react-icons/md";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
