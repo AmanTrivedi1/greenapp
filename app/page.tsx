@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Leaf,  PhoneCall, X } from "lucide-react";
+import { ArrowRight, Leaf, PhoneCall, X } from "lucide-react";
 import { MdOutlineHighQuality } from "react-icons/md";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -24,6 +24,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import Link from "next/link";
+import { ImWhatsapp } from "react-icons/im";
 interface Product {
   name: string;
   // icon: React.ForwardRefExoticComponent<any>;
@@ -429,7 +430,7 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <PhoneCall className="text-white" />
+              <ImWhatsapp className="text-white text-4xl" />
             </Link>
 
             {/* Cross button to hide the WhatsApp icon */}

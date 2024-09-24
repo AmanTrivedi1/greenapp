@@ -13,8 +13,8 @@ const bgiCarouselData = [
   {
     id: 1,
     name: "NOVARK VET HEALTH INC.",
-    subheading: "NOVATIAM - TIAMULIN HYDROGEN FUMRATE 10%",
-    image: "/product-novatiam.jpeg",
+    subheading: "NOVACHC - CHOLINE CHLORIDE 60%",
+    image: "/product-6.jpeg",
   },
   {
     id: 2,

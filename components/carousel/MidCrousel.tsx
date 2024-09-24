@@ -25,8 +25,8 @@ const MidCarouselData = [
   {
     id: 3,
     name: "NOVARK VET HEALTH INC.",
-    subheading: "NOVACHC - CHOLINE CHLORIDE 60%",
-    image: "/product-6.jpeg",
+    subheading: "NOVATIAM - TIAMULIN HYDROGEN FUMRATE 10%",
+    image: "/product-novatiam.jpeg",
   },
 ];
 
