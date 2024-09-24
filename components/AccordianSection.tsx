@@ -16,7 +16,7 @@ const AccordianSection = () => {
     triggerOnce: true,
     threshold: 0.3,
   });
-
+//Just changed
   useEffect(() => {
     if (inView) {
       controls.start("visible");
