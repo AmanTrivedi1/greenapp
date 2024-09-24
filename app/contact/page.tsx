@@ -1,9 +1,50 @@
+"use client";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin } from "lucide-react";
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+      if (result.success) {
+        setResponseMessage("Message sent successfully!");
+      } else {
+        setResponseMessage("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      setResponseMessage("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="max-w-[1300px] m-auto">
       <div className="container mx-auto px-4 py-8">
@@ -13,19 +54,47 @@ export default function ContactPage() {
               HAVE QUESTIONS?
             </h3>
             <h2 className="text-3xl font-bold mb-6">Send us a Message</h2>
-            <form className="space-y-4">
-              <Input placeholder="Name" />
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <Input
+                placeholder="Name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
               <div className="flex gap-4">
-                <Input placeholder="Email*" className="w-1/2" />
-                <Input placeholder="Phone" className="w-1/2" />
+                <Input
+                  placeholder="Email*"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-1/2"
+                  required
+                />
+                <Input
+                  placeholder="Phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-1/2"
+                />
               </div>
               <Textarea
-                placeholder=" Whats your message *"
+                placeholder="What's your message*"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 className="min-h-[150px]"
+                required
               />
-              <Button className="bg-primary-color-light text-white hover:bg-primary-color-light hover:text-white w-full sm:w-auto px-8">
-                Get In Touch
+              <Button
+                className="bg-primary-color-light text-white hover:bg-primary-color-light hover:text-white w-full sm:w-auto px-8"
+                type="submit"
+                disabled={loading}
+              >
+                {loading ? "Sending..." : "Get In Touch"}
               </Button>
+              {responseMessage && <p>{responseMessage}</p>}
             </form>
           </div>
           <div className="lg:w-1/2">

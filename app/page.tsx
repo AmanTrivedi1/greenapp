@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Leaf } from "lucide-react";
+import { ArrowRight, Leaf, Phone, PhoneCall, X } from "lucide-react";
 import { MdOutlineHighQuality } from "react-icons/md";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -34,6 +34,7 @@ interface Product {
 export default function HomePage() {
   const [activeProduct, setActiveProduct] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isIconVisible, setIsIconVisible] = useState(true);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % bestQuality.length);
@@ -51,7 +52,6 @@ export default function HomePage() {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const bestQuality = [
     {
@@ -124,6 +124,18 @@ export default function HomePage() {
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6 },
   };
+  const [isAlertDialogOpen, setIsAlertDialogOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  const handleProductClick = (product: Product) => {
+    setSelectedProduct(product);
+    setIsAlertDialogOpen(true);
+  };
+
+  const handleAlertDialogClose = () => {
+    setIsAlertDialogOpen(false);
+    setSelectedProduct(null);
+  };
 
   return (
     <div className="max-w-[1300px] m-auto">
@@ -192,17 +204,17 @@ export default function HomePage() {
                         {product.name.toLowerCase()} supplement.
                       </p>
 
-                      <AlertDialog>
+                      <AlertDialog open={isAlertDialogOpen}>
                         <AlertDialogTrigger asChild>
                           <Button
-                            className="bg-primary-color-light hover:bg-secondry-color transition-colors"
-                            onClick={() => setSelectedProduct(product)}
+                            className="bg-primary-color-light hover:bg-secondry-color "
+                            onClick={() => handleProductClick(product)}
                           >
                             Learn More
                           </Button>
                         </AlertDialogTrigger>
                         {selectedProduct && (
-                          <AlertDialogContent>
+                          <AlertDialogContent className="">
                             <AlertDialogHeader>
                               <AlertDialogTitle>
                                 {selectedProduct.name}
@@ -216,7 +228,10 @@ export default function HomePage() {
                               </AlertDialogDescription>
                             </AlertDialogHeader>
                             <AlertDialogFooter>
-                              <Button onClick={() => setSelectedProduct(null)}>
+                              <Button
+                                className="bg-primary-color-light hover:bg-secondry-color transition-colors"
+                                onClick={handleAlertDialogClose}
+                              >
                                 Close
                               </Button>
                             </AlertDialogFooter>
@@ -231,8 +246,7 @@ export default function HomePage() {
           </AnimatedSection>
         </main>
       </div>
-
-      <div className="dark:bg-[#0C0A09]  min-h-screen">
+      <div className="  min-h-screen">
         <main className="">
           <AnimatedSection>
             <div className=" px-4  mb-8 rounded-lg  ">
@@ -396,13 +410,37 @@ export default function HomePage() {
                   Join thousands of satisfied customers who have transformed
                   their health with NutriLife supplements.
                 </p>
-                <button className="  px-8 py-3 rounded-full text-lg font-semibold dark:text-black bg-gray-100 transition duration-300">
-                  Get Started Today
-                </button>
+                <Link href="/contact">
+                  <button className="  px-8 py-3 rounded-full text-lg font-semibold dark:text-black bg-gray-100 transition duration-300">
+                    Get Started Today
+                  </button>
+                </Link>
               </div>
             </section>
           </AnimatedSection>
         </main>
+      </div>
+      <div className="fixed right-4 bottom-4 z-50">
+        {/* WhatsApp phone icon and close button */}
+        {isIconVisible && (
+          <div className="relative h-16 w-16 bg-primary-color-light rounded-full flex items-center justify-center">
+            <Link
+              href="https://wa.me/32466910778?text=Hello%20Novark%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20products."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PhoneCall className="text-white" />
+            </Link>
+
+            {/* Cross button to hide the WhatsApp icon */}
+            <button
+              onClick={() => setIsIconVisible(false)}
+              className="absolute top-[-10px] right-[-10px] bg-red-500 rounded-full p-1"
+            >
+              <X className="text-white" />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

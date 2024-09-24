@@ -1,5 +1,5 @@
 "use clinent";
-import { Facebook, Instagram, PhoneCall, Youtube, Linkedin } from "lucide-react";
+import { PhoneCall, Linkedin } from "lucide-react";
 
 import Link from "next/link";
 import React from "react";
@@ -20,7 +20,6 @@ const Footer = () => {
             <div className="sm:w-64 w-full">
               <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                
                 <li>
                   <a href="/products" className=" ">
                     Products
@@ -41,16 +40,23 @@ const Footer = () => {
             <div className="">
               <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
               <div className="flex space-x-4">
-                <Link href="https://www.google.com/">
+                {/* <Link href="https://www.google.com/">
                   <Instagram />
                 </Link>
                 <Link href="https://www.google.com/">
                   <Facebook />
-                </Link>
-                <Link href="https://www.google.com/">
+                </Link> */}
+                <Link
+                  target="_blank"
+                  href="https://www.linkedin.com/company/novark-vethealth-inc/about/"
+                >
                   <Linkedin />
                 </Link>
-                <Link href="tel:+32-466-91-07-78">
+                <Link
+                  href="https://wa.me/32466910778?text=Hello%20Novark%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20products."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <PhoneCall />
                 </Link>
               </div>

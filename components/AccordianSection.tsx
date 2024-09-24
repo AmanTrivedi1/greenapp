@@ -13,8 +13,8 @@ const AccordianSection = () => {
   const [count, setCount] = useState(0);
   const controls = useAnimation();
   const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger animation only once
-    threshold: 0.3, // Adjust the threshold based on when you want the effect to start
+    triggerOnce: true,
+    threshold: 0.3,
   });
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const AccordianSection = () => {
       controls.start("visible");
       let start = 0;
       const end = 1050;
-      const duration = 2000; // Duration in ms
+      const duration = 2000; 
       const incrementTime = Math.ceil(duration / end);
 
       const timer = setInterval(() => {
@@ -104,7 +104,7 @@ const AccordianSection = () => {
               Sinek
             </p>
           </div>
-          <Accordion type="multiple" defaultValue={["item-1"]}>
+          <Accordion type="multiple">
             <AccordionItem value="item-1">
               <AccordionTrigger>
                 <div className="bg-secondry-color rounded-lg w-full">
